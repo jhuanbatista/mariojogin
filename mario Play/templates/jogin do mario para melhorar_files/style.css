@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.planodejogo {
+    width: 100%;
+    height: 500px;
+    border-bottom: 5px solid green;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    /*background-image: url(templates/fundo.jpg);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: contain;*/
+    background: linear-gradient(#87CEEB, #cdecf8);
+}
+
+.mario {
+    width: 85px;
+    position: absolute;
+    bottom: 0;
+}
+
+.nuvens {
+    position: absolute;
+    animation: nuvem 15s infinite linear;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+.cano {
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    animation: cano-animacao 2s infinite linear;
+}
+
+@keyframes nuvem {
+    from {
+        right: -1500px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes cano-animacao {
+    from {
+        right: -80px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+    40% {
+        bottom: 150px;
+    }
+    50% {
+        bottom: 180px;
+    }
+    60% {
+        bottom: 150px;
+    }
+    100% {
+        bottom: 0px;
+    }
+}

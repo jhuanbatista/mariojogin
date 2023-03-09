@@ -1,0 +1,34 @@
+let mario = document.querySelector('.mario')
+let cano = document.querySelector('.cano')
+
+const jump = () => {
+
+    mario.classList.add('jump')
+
+
+    setTimeout(() => {
+
+        mario.classList.remove('jump');
+
+
+    }, 500);
+}
+const loop = setInterval(() => {
+    const canoposi = cano.offsetLeft;
+    const marioposi = +window.getComputedStyle(mario).bottom.replace('px', '');
+    if (canoposi <= 70 && canoposi > 0 && marioposi <= 80) {
+        cano.style.animation = 'none'
+        cano.style.left = `${canoposi}px`
+
+        mario.style.animation = 'none'
+        mario.style.bottom = `${marioposi}px`
+
+        mario.src = 'templates/gameouver.jpg'
+        mario.style.widht = '85px'
+
+        clearInterval(loop)
+
+    }
+}, 10)
+
+document.addEventListener('keydown', jump)
